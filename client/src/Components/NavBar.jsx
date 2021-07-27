@@ -1,4 +1,5 @@
 import '../styles/NavBar.css'
+import {Link} from 'react-router-dom'
 
 const NavBar = () => {
 
@@ -9,7 +10,7 @@ const NavBar = () => {
             </div>
             <ul className='navbar-links'>
                 <li>
-                    <Link>
+                    <Link to ='/cart'>
                         Cart
                     </Link>
                 </li>
