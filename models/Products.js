@@ -9,8 +9,16 @@ const getAllProducts = async () => {
     }
 }
 
-
+const getProductById = async (id) => {
+    try{
+        const product = await Product.findById({id})
+        return product
+    }catch(error){
+        console.log('err', error)
+    }
+}
 
 module.exports = {
-    getAllProducts
+    getAllProducts,
+    getProductById
 }
