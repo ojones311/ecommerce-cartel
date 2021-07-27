@@ -2,7 +2,7 @@ require('dotenv').config()
 
 const connectDB = require('../db/index')
 const productsData = require('../data/product') 
-const Product = require('../models/Product')
+const Product = require('../schemas/productSchema')
 
 connectDB();
 
