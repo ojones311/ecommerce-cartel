@@ -4,6 +4,7 @@ import Navbar from './Components/NavBar';
 import HomeScreen from './Components/HomeScreen'
 import ProductScreen from './Components/ProductScreen'
 import CartScreen from './Components/CartScreen'
+
 function App() {
   return (
     <div className="App">

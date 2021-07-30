@@ -1,0 +1,12 @@
+/* .navbar-links {
+    list-style-type: none;
+} */
+
+.navbar {
+    width: 100%;
+    background-color: pink;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1rem;
+}
