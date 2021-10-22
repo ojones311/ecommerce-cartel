@@ -1,11 +1,11 @@
 import '../styles/HomeScreen.css'
-
+import Product from '../Components/Product' 
 const HomeScreen = () => {
     return(
         <div className='homescreen'>
             <h2 className='homescreen_title'>Latest Products</h2>
             <div className='homescreen_products'>
-                {/* <Product /> */}
+                <Product />
             </div>
         </div>
     )
