@@ -14,9 +14,9 @@ function App() {
   
   return (
     <div className="App">
-      <Navbar />
-      <Backdrop show={sideToggle} />
-      <SideDrawer show={sideToggle} />
+      <Navbar click={() => setSideToggle(true)}/>
+      <Backdrop show={sideToggle} click ={() => setSideToggle(false)}/>
+      <SideDrawer show={sideToggle} click ={() => setSideToggle(false)}/>
       <Switch>
         <Route exact path='/' component={HomeScreen}></Route>
         <Route exact path='/product/:id' component={ProductScreen}></Route>
