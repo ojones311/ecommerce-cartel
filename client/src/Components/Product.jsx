@@ -8,7 +8,7 @@ const Product = () => {
             <div className='product_info'>
                 <p className='info_name'>Product 1</p>
                 <p className='info_description'>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <p className='info_button'>$499.99</p>
+                <p className='info_price'>$499.99</p>
             <Link to={`/product/${1111}`} className='info_button'>View</Link>
             </div>
         </div>

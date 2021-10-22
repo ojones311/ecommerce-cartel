@@ -6,6 +6,13 @@ const HomeScreen = () => {
             <h2 className='homescreen_title'>Latest Products</h2>
             <div className='homescreen_products'>
                 <Product />
+                <Product />
+                <Product />
+                <Product />
+                <Product />
+                <Product />
+                <Product />
+                <Product />
             </div>
         </div>
     )
