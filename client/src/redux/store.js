@@ -5,6 +5,7 @@ import {cartReducer} from './reducers/cartReducers'
 
 const reducer = combineReducers({
     cart: cartReducer,
+    product: productReducer
 })
 
 const middleware = [thunk];
