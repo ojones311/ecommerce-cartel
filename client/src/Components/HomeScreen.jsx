@@ -18,14 +18,13 @@ const HomeScreen = () => {
         <div className='homescreen'>
             <h2 className='homescreen_title'>Latest Products</h2>
             <div className='homescreen_products'>
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
+                {loading ? (
+                    <h2>Loading....</h2>
+                )   : error ? (
+                    <h2>{error}</h2>
+                )   :( 
+                    products.map((product) => <Product product={product} />)
+                )}
             </div>
         </div>
     )
