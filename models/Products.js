@@ -1,24 +1,26 @@
 const Product = require('../schemas/productSchema')
 
-const getAllProducts = async () => {
-    try{
-        const products = await Product.find({})
-        return products
-    }catch(error){
-        console.log('err', error)
+const getAllProducts = async (req, res) => {
+    try {
+      const products = await Product.find({});
+      res.json(products);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: "Server Error" });
     }
-}
-
-const getProductById = async (id) => {
-    try{
-        const product = await Product.findById(id)
-        return product
-    }catch(error){
-        console.log('err', error)
+  };
+  
+  const getProductById = async (req, res) => {
+    try {
+      const product = await Product.findById(req.params.id);
+      res.json(product);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: "Server Error" });
     }
-}
-
-module.exports = {
+  };
+  
+  module.exports = {
     getAllProducts,
-    getProductById
-}
+    getProductById,
+  };

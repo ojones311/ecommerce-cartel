@@ -11,12 +11,12 @@ export const getProductsReducer = (state = {products: []}, action) => {
         case actionTypes.GET_PRODUCTS_SUCCESS:
             return {
                 products: action.payload,
-                loading: false
+                loading: false,
             }
         case actionTypes.GET_PRODUCTS_FAIL:
             return {
                 loading: false,
-                error: action.payload
+                error: action.payload,
             }
         default:
             return state 
