@@ -8,7 +8,7 @@ const Product = ({imageUrl, description, price, productId, name}) => {
             <img src={imageUrl} alt={name}/>
             <div className='product_info'>
                 <p className='info_name'>{name}</p>
-                <p className='info_description'>{description}</p>
+                <p className='info_description'>{description.substr(0,100)}...</p>
                 <p className='info_price'>${price}</p>
                 <Link to={`/product/${productId}`} className='info_button'>View</Link> 
             </div>
