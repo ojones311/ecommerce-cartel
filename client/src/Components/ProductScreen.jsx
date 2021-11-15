@@ -19,6 +19,10 @@ const ProductScreen = ({match, history}) => {
        
     },[dispatch, product, match])
 
+    const addToCartHandler = () => {
+        dispatch(addtoCart(product.id, qty))
+        history.push("/cart")
+    }
     return (
         <div className='productscreen'>
             {loading ? <h2>Loading...</h2> : error ? <h2>{error}</h2> :(
@@ -44,15 +48,14 @@ const ProductScreen = ({match, history}) => {
                         </p>
                         <p>
                             Quantity
-                            <select>
-                                <option value='1'>1</option>
-                                <option value='2'>2</option>
-                                <option value='3'>3</option>
-                                <option value='4'>4</option>
+                            <select value={qty} onChange={(e)=> setQty(e.target.value)}>
+                               {[...Array(product.countInStock).keys()].map((x) => (
+                                   <option key={x + 1} value={x + 1}>{x + 1} </option>
+                               ))}
                             </select>
                         </p>
                         <p>
-                            <button type='button'>Add to Cart</button>
+                            <button type='button' onClick={addToCartHandler()}>Add to Cart</button>
                         </p>
                     </div>
                 </div>
