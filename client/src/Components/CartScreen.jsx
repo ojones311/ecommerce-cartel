@@ -18,6 +18,14 @@ const CartScreen = () => {
     const removeFromCartHandler = (id) => {
         dispatch(removeFromCart(id))
     }
+
+    const getCartCount = () => {
+      return cartItems.reduce((qty, item) => Number(item.qty) + qty,0)  
+    }
+
+    const getCartSum = () => {
+        return cartItems.reduce((price,item) => item.price * item.qty + price,0)
+    }
     return (
         <div className='cartscreen'>
             <div className='cartscreen_left'>
@@ -26,12 +34,14 @@ const CartScreen = () => {
                     <div>
                        Your cart is empty <Link to='/'>Go Back</Link> 
                     </div>
-                ): cartItems.map((item) => <CartItem cartItem={item} qtyChangeHandler={qtyChangeHandler} removeFromCartHandler={removeFromCartHandler}/>)}
+                ): (
+                    cartItems.map((item) => <CartItem key={item.product}cartItem={item} qtyChangeHandler={qtyChangeHandler} removeFromCartHandler={removeFromCartHandler}/>)
+                )}
             </div>
             <div className='cartscreen_right'>
                 <div className='cartscreen_info'>
-                    <p>Subtotal ({cartItems.length}) items</p>
-                    <p>{}</p>
+                    <p>Subtotal ({getCartCount()}) items</p>
+                    <p>${getCartSum().toFixed(2)}</p>
                 </div>
                 <div>
                     <button>Proceed To Checkout</button>
