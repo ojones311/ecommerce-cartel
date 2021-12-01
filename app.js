@@ -6,9 +6,11 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const connectDB = require('./db/index')
 
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/products')
+var paymentRouter = require('./routes/payments')
 
 connectDB();
 var app = express();
