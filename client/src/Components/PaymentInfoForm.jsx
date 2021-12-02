@@ -1,10 +1,28 @@
+import {
+    CardNumberElement,
+    CardExpiryElement,
+    CardCVCElement,
+    injectStripe
+} from 'react-stripe-elements'
+import {useState} from 'react'
+import axios from 'axios'
+import {Link} from 'react-router-dom'
 
-const PaymentInforForm = () => {
+const PaymentInfoForm = ({cartItems}) => {
+    if(!cartItems.length) {
+        return (
+            <div>
+                
+            </div>
+        )
+    }
+
     return (
-        <div>
 
+        <div>
+            {cartItems[0].product}
         </div>
     )
 }
 
-export default PaymentInforForm
+export default PaymentInfoForm
