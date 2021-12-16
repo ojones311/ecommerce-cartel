@@ -8,13 +8,18 @@ import {useState} from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 
-const PaymentInfoForm = ({cartItems}) => {
-    if(!cartItems.length) {
-        return (
-            <div>
-                
-            </div>
-        )
+const PaymentInfoForm = ({selectedProduct, stripe, cartItems}) => {
+
+    const [receiptUrl, setReceiptUrl] = useState('')
+
+    const handleSubmit = async event => {
+        event.preventDefault()
+
+        const {token} = await stripe.createToken()
+
+        const order = await axios.post('http://localhost:7000/api/stripe/charge',{
+            amount: selectedProduct
+        })
     }
 
     return (
